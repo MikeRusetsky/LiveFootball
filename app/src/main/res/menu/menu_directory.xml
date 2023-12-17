@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/home_icon"
+        android:title="Home"
+        app:showAsAction="withText"/>
+    <item
+        android:id="@+id/live"
+        android:icon="@drawable/live_icon"
+        android:title="Live"
+        app:showAsAction="withText"/>
+    <item
+        android:id="@+id/schedule"
+        android:icon="@drawable/schedule_icon"
+        android:title="Schedule"
+        app:showAsAction="withText"/>
+
+    <item
+        android:id="@+id/standings"
+        android:icon="@drawable/standings_icon"
+        android:title= "Standings"
+        app:showAsAction="withText"/>
+
+</menu>
