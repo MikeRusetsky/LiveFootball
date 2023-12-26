@@ -6,5 +6,12 @@
     android:id="@+id/live_fragment_root"
     tools:context=".ui.Live.LiveFragment">
 
+    <ImageView
+        android:id = "@+id/title_live_match"
+        android:layout_width="84dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/title"/>
 
 </FrameLayout>
