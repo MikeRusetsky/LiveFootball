@@ -106,7 +106,6 @@ dependencies {
 
     //pagination
     implementation ("androidx.paging:paging-runtime:3.1.0")
-
     implementation ("com.airbnb.android:lottie:6.1.0")
 
     //navigation
@@ -134,4 +133,6 @@ dependencies {
     implementation ("androidx.room:room-runtime:2.3.0-beta02")
     implementation ("androidx.room:room-rxjava3:2.3.0-beta02")
     kapt ("androidx.room:room-compiler:2.3.0-beta02")
+
+
 }

@@ -1,4 +1,9 @@
 package com.mikerusetsky.livefootball.data
 
-class PreferenceProvider {
+import android.content.Context
+
+class PreferenceProvider  (context: Context) {
+
+    private val appContext = context.applicationContext
+
 }
