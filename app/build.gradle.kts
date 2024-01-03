@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id ("kotlin-kapt")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -105,7 +106,6 @@ dependencies {
 
     //pagination
     implementation ("androidx.paging:paging-runtime:3.1.0")
-
     implementation ("com.airbnb.android:lottie:6.1.0")
 
     //navigation
@@ -122,4 +122,17 @@ dependencies {
 
     //Logging Interceptor
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+
+    //RxJava
+    implementation ("io.reactivex.rxjava3:rxandroid:3.0.0")
+    implementation ("io.reactivex.rxjava3:rxjava:3.0.10")
+    implementation ("io.reactivex.rxjava3:rxkotlin:3.0.1")
+    implementation ("com.github.akarnokd:rxjava3-retrofit-adapter:3.0.0")
+
+    //Room
+    implementation ("androidx.room:room-runtime:2.3.0-beta02")
+    implementation ("androidx.room:room-rxjava3:2.3.0-beta02")
+    kapt ("androidx.room:room-compiler:2.3.0-beta02")
+
+
 }
