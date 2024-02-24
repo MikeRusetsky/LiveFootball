@@ -14,5 +14,10 @@
     <string name="fragment_schedule">Schedule</string>
     <string name="fragment_standings">Standings</string>
     <string name="fragment_live">Live</string>
+    <string name="standings">Standings</string>
+    <string name="schedule">Schedule</string>
+    <string name="live">Live</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
 
 </resources>

@@ -1,5 +1,6 @@
 package com.mikerusetsky.livefootball.di
 
+import com.mikerusetsky.livefootball.di.home.HomeComponent
 import com.mikerusetsky.livefootball.di.modules.DatabaseModule
 import com.mikerusetsky.livefootball.di.modules.DomainModule
 import com.mikerusetsky.livefootball.di.modules.RemoteModule
@@ -10,7 +11,6 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(
-
     modules = [
         RemoteModule::class,
         DatabaseModule::class,
@@ -18,5 +18,7 @@ import javax.inject.Singleton
     ]
 )
 interface AppComponent {
-        fun inject(homeFragmentViewModel: HomeViewModel)
+
+    fun getHomeComponent(): HomeComponent
+
 }

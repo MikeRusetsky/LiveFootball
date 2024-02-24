@@ -5,23 +5,23 @@
     <item
         android:id="@+id/home"
         android:icon="@drawable/home_icon"
-        android:title="Home"
+        android:title="@string/home"
         app:showAsAction="withText"/>
     <item
         android:id="@+id/live"
         android:icon="@drawable/live_icon"
-        android:title="Live"
+        android:title="@string/live"
         app:showAsAction="withText"/>
     <item
         android:id="@+id/schedule"
         android:icon="@drawable/schedule_icon"
-        android:title="Schedule"
+        android:title="@string/schedule"
         app:showAsAction="withText"/>
 
     <item
         android:id="@+id/standings"
         android:icon="@drawable/standings_icon"
-        android:title= "Standings"
+        android:title= "@string/standings"
         app:showAsAction="withText"/>
 
 </menu>

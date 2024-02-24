@@ -20,13 +20,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initNavigation() {
-        binding.navigationView.setOnNavigationItemSelectedListener {
+        changeFragment(HomeFragment.newInstance(), "home")
+
+        binding.navigationView.setOnItemSelectedListener {
 
             when (it.itemId) {
                 R.id.home -> {
                     val tag = "home"
                     val fragment = checkFragmentExistence(tag)
-                    changeFragment(fragment ?: HomeFragment(), tag)
+                    changeFragment(fragment ?: HomeFragment.newInstance(), tag)
                     true
                 }
                 R.id.live -> {
@@ -60,7 +62,7 @@ class MainActivity : AppCompatActivity() {
    private fun changeFragment(fragment: Fragment, tag: String) {
      supportFragmentManager
         .beginTransaction()
-        .replace(androidx.fragment.R.id.fragment_container_view_tag, fragment, tag)
+        .replace(R.id.container, fragment, tag)
         .addToBackStack(null)
         .commit()
    }
