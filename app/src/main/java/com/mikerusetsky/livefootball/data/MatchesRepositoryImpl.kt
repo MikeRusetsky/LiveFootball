@@ -23,11 +23,10 @@ class MatchesRepositoryImpl @Inject constructor(
                     this.set(Calendar.SECOND, 59)
                 }
 
-                val result = season.rounds.filter {
+                season.rounds.filter {
                     it.startingAt >= now && it.startingAt <= evening.time
-                }.map { it.fixtures }.map { it.map { it.asDomain() } }
+                }.map { it.fixtures }.first().map { it.asDomain() }
 
-                emptyList()
             } catch (e: Exception) {
                 emptyList()
             }

@@ -17,7 +17,7 @@ fun FixtureRemote.asDomain(): Match = Match(
 fun TeamRemote.asDomain(): Team = Team(
     id = id,
     name = name,
-    shortCode = shortCode,
+    shortCode = shortCode.orEmpty(),
     image = image
 )
 

@@ -29,6 +29,6 @@ data class FixtureRemote(
 data class TeamRemote (
     val id: Int,
     val name: String,
-    @SerializedName("short_code") val shortCode: String,
+    @SerializedName("short_code") val shortCode: String?,
     @SerializedName("image_path") val image: String,
 )
