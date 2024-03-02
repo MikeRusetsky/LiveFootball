@@ -1,5 +1,6 @@
 package com.mikerusetsky.livefootball.ui.Home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -14,6 +15,8 @@ import com.mikerusetsky.livefootball.App
 import com.mikerusetsky.livefootball.R
 import com.mikerusetsky.livefootball.databinding.FragmentHomeBinding
 import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
@@ -30,6 +33,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupMatches()
+        binding.share.setOnClickListener { share() }
 
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -44,6 +48,26 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         adapter = MatchAdapter()
         binding.matches.adapter = adapter
         binding.matches.layoutManager = LinearLayoutManager(requireContext())
+    }
+
+    private fun share() {
+        val stringBuilder = StringBuilder()
+        stringBuilder.append("Today matches: \n")
+
+        viewModel.observeUi().value.items.forEach {
+            val leftTeam = it.teams[0]
+            val rightTeam = it.teams[1]
+            val time = SimpleDateFormat("mm:HH", Locale.getDefault()).format(it.startingAt)
+
+            stringBuilder.append("${leftTeam.name} ${time} ${rightTeam.name} \n")
+        }
+
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.putExtra(Intent.EXTRA_TEXT, stringBuilder.toString())
+        intent.type = "text/plain"
+
+        val shareIntent = Intent.createChooser(intent, null)
+        startActivity(shareIntent)
     }
 
     companion object {
