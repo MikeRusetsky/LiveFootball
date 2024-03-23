@@ -24,8 +24,8 @@
         tools:layout="@layout/fragment_schedule" />
 
     <fragment
-        android:id="@+id/navigation_standings"
-        android:name="com.mikerusetsky.livefootball.ui.Standings.StandingsFragment"
+        android:id="@+id/navigation_settings"
+        android:name="com.mikerusetsky.livefootball.ui.settings.SettingsFragment"
         android:label="@string/fragment_standings"
-        tools:layout="@layout/fragment_standings" />
+        tools:layout="@layout/fragment_settings" />
 </navigation>
